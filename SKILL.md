@@ -1,45 +1,96 @@
 ---
 name: feishu-wiki-skill
-description: "Convert Feishu or Lark wiki pages, access diagnostics, and exported Markdown or HTML into reusable Codex skill content. Use when Codex needs to scrape or diagnose a Feishu wiki link, import a Feishu wiki export, update this skill from a fresh export, or answer from an imported Feishu wiki reference."
+description: "Guide Foreign-owned U.S. Delaware single-member LLC IRS information reporting DIY workflows. Use when Codex needs to explain, prepare checklists for, or draft field-by-field Form 5472 + pro forma Form 1120 packages for a foreign-owned U.S. disregarded entity, including owner capital contributions/distributions, Part V attachments, fax/mail filing order, and evidence retention."
 ---
 
-# Feishu Wiki Skill
+# Foreign-Owned U.S. DE LLC IRS Filing
 
-## Workflow
+## Scope
 
-1. Probe the Feishu wiki URL before assuming the content is public:
+Use this skill for a foreign person who wholly owns a U.S. domestic disregarded entity, especially a Delaware single-member LLC, and needs to prepare the IRS information filing package described in the imported Feishu wiki:
 
-   ```powershell
-   python scripts/probe_feishu_url.py "https://example.feishu.cn/wiki/token" --output references/access-diagnostic.json
-   ```
+- Form 5472 as the substantive information return.
+- Pro forma Form 1120 as the filing cover/attachment vehicle.
+- Part V attachment for reportable transactions between the LLC and foreign owner or related party.
+- Fax/mail submission order and proof-retention workflow.
 
-2. If the probe reaches a readable document page, extract the visible article text with a browser or Feishu export and preserve the original headings.
+This is a workflow aid, not tax or legal advice. For current-year work, verify the latest IRS Form 5472, Form 1120, and instructions before finalizing.
 
-3. If the probe redirects to `accounts.feishu.cn`, `login.feishu.cn`, or a passport page, treat the page as private. Do not infer hidden wiki content from the login page. Ask for one of these inputs:
+## Primary Reference
 
-   - A Feishu Markdown export.
-   - A Feishu HTML export.
-   - A copied full-page Markdown/text dump.
-   - Explicit authenticated browser/API access for that workspace.
+Load `references/wiki-export.md` before doing field-level work. It contains the full imported guide, sample facts, field-by-field examples, and copyable text templates.
 
-4. Import the exported content into this skill:
+Load `references/irs-official.md` when checking official IRS authority, filing methods, or current instructions.
 
-   ```powershell
-   python scripts/import_markdown_export.py path\to\feishu-export.md --skill-dir . --source-url "https://example.feishu.cn/wiki/token" --force
-   ```
+## Core Logic
 
-5. After import, answer user requests from `references/wiki-export.md` first. Load `references/source.md` only when provenance, access status, or update steps matter.
+- Treat Form 5472 as the core disclosure form for reportable transactions involving the foreign owner or related party.
+- Treat pro forma Form 1120 as the required wrapper for a foreign-owned U.S. DE that otherwise has no ordinary corporate income tax return filing requirement.
+- Do not turn the DE into a full C corporation income tax workflow unless the user gives facts that require a different analysis.
+- For the simple imported example, report owner funding in Form 5472 Part V and attach a short transaction statement.
+- Use the special foreign-owned U.S. DE filing route from the Form 5472 instructions, not the ordinary Form 1120 filing address.
 
-## Content Rules
+## Collect Inputs
 
-- Preserve product names, commands, URLs, tables, and numbered workflows exactly when importing.
-- Keep `SKILL.md` procedural and concise. Put the full wiki content in `references/wiki-export.md`.
-- If the wiki content describes a fragile workflow, turn the core steps into imperative instructions in `SKILL.md` and keep details in the reference file.
-- If the wiki content is broad or long, keep only a navigation guide in `SKILL.md` and tell Codex when to read the relevant sections in `references/wiki-export.md`.
-- Never commit cookies, session state, exported auth JSON, or captured login pages.
+Before drafting a package, collect:
 
-## Current Source
+- LLC legal name, EIN, address, formation date, state, and tax year.
+- Whether this is the first filing, a final filing, or a name/address change year.
+- Foreign owner name, country, tax residence, citizenship, address, U.S. identifying number if any, and foreign taxpayer ID if any.
+- LLC total assets at year end.
+- Principal business activity and code when available.
+- Owner-to-LLC transfers during the tax year, including verification deposits and Stripe/payment-platform setup transfers.
+- LLC-to-owner transfers, owner draws, distributions, reimbursements, or payment-platform payouts to the owner.
+- Any non-cash, below-market, loan, service, royalty, rent, sale, purchase, or other related-party transactions that make the simple template insufficient.
 
-This repository was initialized from the Feishu wiki URL recorded in `references/source.md`. The URL was not publicly readable during the initial capture attempt, so this skill currently contains the acquisition and import workflow rather than the private wiki body.
+## Drafting Workflow
 
-Run the import script with a real Feishu export to convert this repository from an acquisition skill into the final content skill.
+1. Decide whether the imported simple path applies:
+   - 100% foreign-owned U.S. DE.
+   - Reportable transaction exists with the foreign owner or related party.
+   - No facts suggesting a full Form 1120, Form 1120-F, partnership return, payroll, withholding, sales tax, or state filing issue.
+
+2. Prepare pro forma Form 1120:
+   - Write `Foreign-owned U.S. DE` across the top.
+   - Fill entity name and address.
+   - Fill item B with EIN.
+   - Fill item C or other first-page items only when the current official form/instructions require them for this use case.
+   - Check item E for initial/final/name/address changes when applicable.
+   - Leave ordinary income, deduction, and tax computation lines blank unless facts require escalation.
+
+3. Prepare Form 5472:
+   - Part I: reporting LLC details, total assets, activity, transaction totals, number of Forms 5472, country and date fields, and foreign-owned U.S. DE checkboxes.
+   - Part II: foreign owner as the 25% foreign shareholder.
+   - Part III: same foreign owner as related party when applicable.
+   - Part IV: use zero/blank only if transactions are being reported in Part V under the foreign-owned U.S. DE rules and no Part IV facts exist.
+   - Part V: attach a statement summarizing owner contributions/distributions or other reportable transactions.
+   - Parts VI and VII: answer from facts; do not blindly copy the sample if facts differ.
+
+4. Build the filing packet in this order:
+   - Fax cover sheet if faxing.
+   - Pro forma Form 1120.
+   - Form 5472.
+   - Part V attachment.
+
+5. File by the due date for the relevant Form 1120 year, including extensions if properly requested. Preserve proof:
+   - Fax confirmation receipt, or
+   - Mailing receipt/tracking and copy of the mailed packet.
+
+## Escalate
+
+Pause and tell the user to consult a qualified tax professional when:
+
+- The LLC has U.S. trade or business income, employees, contractors, withholding, payroll, inventory, U.S. real estate, loans, services, royalties, rent, sale/purchase transactions, crypto, or multiple owners.
+- The owner is not an individual, or ownership changed during the year.
+- The user asks for penalty defense, reasonable cause letters, delinquent filings, state filings, treaty positions, or entity classification elections.
+- Current IRS instructions conflict with the imported wiki.
+
+## Updating The Skill
+
+If the Feishu wiki is exported again, import it with:
+
+```powershell
+python scripts/import_markdown_export.py path\to\export.md --skill-dir . --source-url "https://t02xmt66jgr.feishu.cn/wiki/Ei91wxkxSistBkkBHDrc29bMnah" --force
+```
+
+After import, review and restore this domain-specific `SKILL.md` if the script regenerated a generic one.
