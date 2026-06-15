@@ -1,5 +1,5 @@
 ---
-name: feishu-wiki-skill
+name: irs-5472-de-llc-filing
 description: "Guide Foreign-owned U.S. Delaware single-member LLC IRS information reporting DIY workflows. Use when Codex needs to explain, prepare checklists for, or draft field-by-field Form 5472 + pro forma Form 1120 packages for a foreign-owned U.S. disregarded entity, including owner capital contributions/distributions, Part V attachments, fax/mail filing order, and evidence retention."
 ---
 

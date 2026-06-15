@@ -1,4 +1,4 @@
 interface:
-  display_name: "Foreign-Owned DE IRS Filing"
+  display_name: "IRS 5472 DE LLC Filing"
   short_description: "Form 5472 and pro forma 1120 DIY guide"
-  default_prompt: "Use $feishu-wiki-skill to prepare a Foreign-owned U.S. DE LLC Form 5472 plus pro forma Form 1120 filing checklist."
+  default_prompt: "Use $irs-5472-de-llc-filing to prepare a Foreign-owned U.S. DE LLC Form 5472 plus pro forma Form 1120 filing checklist."
