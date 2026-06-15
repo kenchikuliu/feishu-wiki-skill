@@ -1,0 +1,58 @@
+{
+  "source_url": "https://t02xmt66jgr.feishu.cn/wiki/Ei91wxkxSistBkkBHDrc29bMnah",
+  "checked_at_utc": "2026-06-15T03:17:51.041297+00:00",
+  "accessible": false,
+  "reason": "not_found_or_private",
+  "head": {
+    "ok": false,
+    "status": 404,
+    "final_url": "https://t02xmt66jgr.feishu.cn/wiki/Ei91wxkxSistBkkBHDrc29bMnah",
+    "headers": {
+      "Server": "volc-dcdn",
+      "Content-Type": "text/plain",
+      "Content-Length": "18",
+      "Connection": "close",
+      "Date": "Mon, 15 Jun 2026 03:17:45 GMT",
+      "X-Tt-Logid": "202606151117455B68C57A897B80EDE758",
+      "X-Request-Id": "fa79243bb54825d16c80c944f848c360",
+      "Request-Id": "fa79243bb54825d16c80c944f848c360",
+      "via": "n172-186-203.gdguangzhou-mp01.Creative,n172-207-152.HK-HKG1.Creative",
+      "x-request-ip": "[redacted]",
+      "x-tt-trace-tag": "id=5",
+      "x-dsa-trace-id": "1781493465b34543775e756403a4a4ac3eec1341da",
+      "X-Dsa-Origin-Status": "404",
+      "server-timing": "cdn-cache;desc=MISS,  origin;dur=50, edge;dur=3, cdn-cache;desc=MISS"
+    },
+    "bytes_read": 0,
+    "body_preview": "",
+    "error": "HTTP Error 404: Not Found"
+  },
+  "get": {
+    "ok": false,
+    "status": 302,
+    "final_url": "https://t02xmt66jgr.feishu.cn/wiki/Ei91wxkxSistBkkBHDrc29bMnah",
+    "headers": {
+      "Server": "volc-dcdn",
+      "Content-Length": "0",
+      "Connection": "close",
+      "Date": "Mon, 15 Jun 2026 03:17:50 GMT",
+      "X-Tt-Logid": "20260615111750F8241EF88E95E0E9E900",
+      "X-Lgw-Dst-Svc": "[redacted]",
+      "X-Robots-Tag": "noindex, nofollow, nosnippet",
+      "Location": "https://accounts.feishu.cn/accounts/page/login?app_id=2&query_scope=all&redirect_uri=https%3A%2F%2Ft02xmt66jgr.feishu.cn%2Fwiki%2FEi91wxkxSistBkkBHDrc29bMnah%3Flogin_redirect_times%3D1&with_guest=1",
+      "Tt_stable": "1",
+      "X-Request-Id": "ec5a0580cc1cb1fcb8c8fde9cafd08de",
+      "Request-Id": "ec5a0580cc1cb1fcb8c8fde9cafd08de",
+      "cache-control": "no-store",
+      "via": "n172-053-070.jswxmp-agg.Creative,n172-059-043.szmp04-peer.Creative,n62-196-216.CN-HKG3.Creative",
+      "x-request-ip": "[redacted]",
+      "x-tt-trace-tag": "id=5",
+      "x-dsa-trace-id": "17814934701a5ecf4ee4643783e9b7f73e7d9ec763",
+      "X-Dsa-Origin-Status": "302",
+      "server-timing": "cdn-cache;desc=MISS,   origin;dur=213, edge;dur=30, cdn-cache;desc=MISS, cdn-cache;desc=MISS"
+    },
+    "bytes_read": 0,
+    "body_preview": "",
+    "error": "HTTP Error 302: Found"
+  }
+}

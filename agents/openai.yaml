@@ -1,0 +1,4 @@
+interface:
+  display_name: "Feishu Wiki Skill"
+  short_description: "Turn Feishu wiki exports into Codex skills"
+  default_prompt: "Use $feishu-wiki-skill to convert a Feishu wiki export into a concise reusable Codex skill."

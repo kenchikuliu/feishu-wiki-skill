@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+*.pyo
+.auth/
+captures/
+*.cookies.json
+*.state.json
+auth.json
+state.json
